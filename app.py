@@ -64,7 +64,7 @@ def retrain(): # Rutarlo al endpoint '/retrain', metodo GET
 
         with open("model.pkl", "wb") as f:
             pickle.dump(model, f)
-        return f"Modelo entrenado y guardado como model.pkl"
+        return f"✅ Modelo entrenado y guardado como model.pkl"
 
 # Endpoint oculto para usar en redespliegue
 # @app.route("/extra")
