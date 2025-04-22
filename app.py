@@ -25,7 +25,7 @@ def home():
     })
 
 
-@app.route("/predict")
+@app.route("/predict", methods=["GET"])
 def predict():
     try:
         # Obtener los parámetros de la consulta
@@ -48,7 +48,7 @@ def predict():
                 "2": "virginica"
             }
         })
-    except Exception as e:
+    except (ValueError, TypeError, KeyError) as e:
         return jsonify({"error": str(e)})
 
 # Endpoint oculto para redespliegue
