@@ -62,15 +62,9 @@ def retrain(): # Rutarlo al endpoint '/retrain', metodo GET
     model = RandomForestClassifier()
     model.fit(X, y)
 
-<<<<<<< HEAD
-        with open("model.pkl", "wb") as f:
-            pickle.dump(model, f)
-        return f"✅ Modelo entrenado y guardado como model.pkl"
-=======
     with open("model.pkl", "wb") as f:
         pickle.dump(model, f)
     return f"Modelo entrenado y guardado como model.pkl"
->>>>>>> b57a0416413f872f8b5796b91cb60d1e17f0dcb0
 
 # Endpoint oculto para usar en redespliegue
 # @app.route("/extra")
