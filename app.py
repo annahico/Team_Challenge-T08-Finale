@@ -56,7 +56,7 @@ def predict():
 # def extra():
 #     return jsonify({
 #         "mensaje": "¡Este es el nuevo endpoint activado tras redesplegar! 🚀",
-#         "info": "Aquí podrías agregar nuevas funcionalidades, estadísticas, etc."
+#         "info": "Aquí podríamos agregar nuevas funcionalidades, estadísticas, etc."
 #     })
 
 
