@@ -5,8 +5,8 @@ Este proyecto consiste en la creación de una API REST que permite realizar pred
 ## Colaboradores
 
 - **Anna Hidalgo Costa**
-- **José Estévez**
-- **Pablo García**
+- **José Estévez** @esjoal
+- **Pablo García** @pajuanes
 
 ## Descripción
 
