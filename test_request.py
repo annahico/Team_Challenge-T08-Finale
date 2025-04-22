@@ -1,17 +1,17 @@
 import requests
 
-# URL del endpoint de predicción
+# URL del endpoint
 url = "https://team-challenge-t08-finale.onrender.com/predict"
 
-# Parámetros de entrada (puedes cambiarlos para probar distintas flores)
+# Parámetros de entrada (ajusta según los valores de tu nuevo dataset)
 params = {
-    "sepal_length": 5.1,
-    "sepal_width": 3.5,
-    "petal_length": 1.4,
-    "petal_width": 0.2
+    "sepal_length": 6.1,
+    "sepal_width": 2.9,
+    "petal_length": 4.7,
+    "petal_width": 1.4
 }
 
-# Hacer la petición GET
+# Realizar la petición GET
 response = requests.get(url, params=params, timeout=10)
 
 # Mostrar la respuesta JSON

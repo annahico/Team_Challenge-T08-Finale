@@ -13,7 +13,7 @@ with open("model.pkl", "rb") as f:
 @app.route("/")
 def home():
     return jsonify({
-        "message": "Bienvenido a la API del modelo de clasificación de Rosas Sant Jordi 🌸",
+        "message": "Bienvenido a la API del modelo de clasificación de flores Iris 🌸",
         "uso": "Envía una petición GET al endpoint /predict con los siguientes parámetros:",
         "parámetros": [
             "sepal_length (float)",
@@ -21,11 +21,11 @@ def home():
             "petal_length (float)",
             "petal_width (float)"
         ],
-        "ejemplo": "https://team-challenge-t08-finale.onrender.com/predict?sepal_length=5.1&sepal_width=3.5&petal_length=1.4&petal_width=0.2"
+        "ejemplo": "/predict?sepal_length=5.1&sepal_width=3.5&petal_length=1.4&petal_width=0.2"
     })
 
 
-@app.route("/predict", methods=["GET"])
+@app.route("/predict")
 def predict():
     try:
         # Obtener los parámetros de la consulta
@@ -40,23 +40,24 @@ def predict():
         # Realizar la predicción
         prediction = model.predict(features)[0]
 
+        # Devolver la predicción como respuesta JSON
         return jsonify({
             "predicción": int(prediction),
-            "colores": {
-                "0": "roja",
-                "1": "azul",
-                "2": "negra"
+            "clases": {
+                "0": "setosa",
+                "1": "versicolor",
+                "2": "virginica"
             }
         })
-    except (ValueError, TypeError, KeyError) as e:
+    except (ValueError, TypeError) as e:
         return jsonify({"error": str(e)})
 
-# Endpoint oculto para redespliegue
+# Endpoint oculto para usar en redespliegue
 # @app.route("/extra")
 # def extra():
 #     return jsonify({
 #         "mensaje": "¡Este es el nuevo endpoint activado tras redesplegar! 🚀",
-#         "info": "Aquí podríamos agregar nuevas funcionalidades, estadísticas, etc."
+#         "info": "Aquí podrías agregar nuevas funcionalidades, estadísticas, etc."
 #     })
 
 
