@@ -25,7 +25,7 @@ def home():
     })
 
 
-@app.route("/predict")
+@app.route("/predict", methods=["GET"])
 def predict():
     try:
         # Obtener los parámetros de la consulta
