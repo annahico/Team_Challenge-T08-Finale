@@ -2,6 +2,8 @@ import pickle
 
 import numpy as np
 from flask import Flask, jsonify, request
+from sklearn.datasets import load_iris
+from sklearn.ensemble import RandomForestClassifier
 
 app = Flask(__name__)
 
@@ -25,7 +27,7 @@ def home():
     })
 
 
-@app.route("/predict")
+@app.route("/predict", methods=["GET"])
 def predict():
     try:
         # Obtener los parámetros de la consulta
@@ -51,6 +53,18 @@ def predict():
         })
     except (ValueError, TypeError) as e:
         return jsonify({"error": str(e)})
+
+@app.route('/retrain', methods=['GET'])
+# Enruta la funcion al endpoint /retrain
+def retrain(): # Rutarlo al endpoint '/retrain', metodo GET
+        iris = load_iris()
+        X, y = iris['data'], iris['target']
+        model = RandomForestClassifier()
+        model.fit(X, y)
+
+        with open("model.pkl", "wb") as f:
+            pickle.dump(model, f)
+        return f"Modelo entrenado y guardado como model.pkl"
 
 # Endpoint oculto para usar en redespliegue
 # @app.route("/extra")
