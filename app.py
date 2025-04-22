@@ -57,14 +57,14 @@ def predict():
 @app.route('/retrain', methods=['GET'])
 # Enruta la funcion al endpoint /retrain
 def retrain(): # Rutarlo al endpoint '/retrain', metodo GET
-        iris = load_iris()
-        X, y = iris['data'], iris['target']
-        model = RandomForestClassifier()
-        model.fit(X, y)
+    iris = load_iris()
+    X, y = iris['data'], iris['target']
+    model = RandomForestClassifier()
+    model.fit(X, y)
 
-        with open("model.pkl", "wb") as f:
-            pickle.dump(model, f)
-        return f"Modelo entrenado y guardado como model.pkl"
+    with open("model.pkl", "wb") as f:
+        pickle.dump(model, f)
+    return f"Modelo entrenado y guardado como model.pkl"
 
 # Endpoint oculto para usar en redespliegue
 # @app.route("/extra")
