@@ -21,7 +21,7 @@ def home():
             "petal_length (float)",
             "petal_width (float)"
         ],
-        "ejemplo": "/predict?sepal_length=5.1&sepal_width=3.5&petal_length=1.4&petal_width=0.2"
+        "ejemplo": "https://team-challenge-t08-finale.onrender.com/predict?sepal_length=5.1&sepal_width=3.5&petal_length=1.4&petal_width=0.2"
     })
 
 
@@ -40,7 +40,6 @@ def predict():
         # Realizar la predicción
         prediction = model.predict(features)[0]
 
-        # Devolver la predicción como respuesta JSON
         return jsonify({
             "predicción": int(prediction),
             "clases": {
@@ -49,14 +48,10 @@ def predict():
                 "2": "virginica"
             }
         })
-    except ValueError as e:
-        return jsonify({"error": "Invalid input: " + str(e)})
-    except KeyError as e:
-        return jsonify({"error": "Missing parameter: " + str(e)})
     except Exception as e:
-        return jsonify({"error": "An unexpected error occurred: " + str(e)})
+        return jsonify({"error": str(e)})
 
-# Endpoint oculto para usar en redespliegue
+# Endpoint oculto para redespliegue
 # @app.route("/extra")
 # def extra():
 #     return jsonify({
