@@ -20,13 +20,13 @@ La API proporciona dos endpoints principales:
    - `petal_length` (longitud del pétalo)
    - `petal_width` (anchura del pétalo)
 
-   Ejemplo de uso:
-   https://team-challenge-t08-finale.onrender.com/predict?sepal_length=5.1&sepal_width=3.5&petal_length=1.4&petal_width=0.2
+   <!-- Ejemplo de uso:
+   https://team-challenge-t08-finale.onrender.com/predict?sepal_length=5.1&sepal_width=3.5&petal_length=1.4&petal_width=0.2 -->
 
 3. **`/retrain`**: Endpoint para reentrenar el modelo utilizando el dataset Iris. Este endpoint requiere un parámetro adicional `force=true` para autorizar el reentrenamiento. Solo debe ser usado con precaución.
 
-Ejemplo de uso:
-https://team-challenge-t08-finale.onrender.com/retrain?force=true
+<!-- Ejemplo de uso:
+https://team-challenge-t08-finale.onrender.com/retrain?force=true -->
 
 ## Instalación
 
