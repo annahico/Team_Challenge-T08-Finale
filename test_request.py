@@ -19,4 +19,4 @@ if response.status_code == 200:
     print("Respuesta de la API:")
     print(response.json())
 else:
-    print("Error al llamar a la API:", response.status_code)
+    print("❌ Error al llamar a la API:", response.status_code)
