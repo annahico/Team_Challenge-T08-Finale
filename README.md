@@ -8,6 +8,27 @@ Este proyecto consiste en la creación de una API REST que permite realizar pred
 - **José Estévez** @esjoal
 - **Pablo García** @pajuanes
 
+## 🚀 Enlaces de despliegue
+
+- **API principal (JSON)**:  
+  👉 https://team-challenge-t08-finale.onrender.com/
+
+- **Demo de la Web App (HTML)**:  
+  👉 https://team-challenge-t08-finale.onrender.com/web
+
+## 🔍 Endpoints disponibles
+
+| Endpoint   | Método | Descripción                                                                                  |
+| ---------- | ------ | -------------------------------------------------------------------------------------------- |
+| `/`        | GET    | Página de bienvenida e instrucciones de uso                                                  |
+| `/predict` | GET    | Predice la clase de una flor Iris usando parámetros como `sepal_length`, `sepal_width`, etc. |
+| `/retrain` | GET    | Reentrena el modelo utilizando el dataset Iris                                               |
+| `/web`     | GET    | Interfaz HTML amigable para probar el modelo                                                 |
+
+## 🖼 Vista de la Web App
+
+![Captura de la Web App](https://raw.githubusercontent.com/annahico/Team_Challenge-T08-Finale/master/static/API_Web.png)
+
 ## Descripción
 
 La API proporciona dos endpoints principales:
@@ -50,7 +71,3 @@ python train_model.py
 ```bash
 python test_request.py
 ```
-
-<!-- ## API web
-
-(https://team-challenge-t08-finale.onrender.com/web) -->
