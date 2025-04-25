@@ -36,3 +36,17 @@ https://team-challenge-t08-finale.onrender.com/retrain?force=true -->
 git clone https://github.com/annahico/Team_Challenge-T08-Finale.git
 cd Team_Challenge-T08-Finale
 ```
+
+## Ejecución
+
+1. En la terminal primero hay que entrenar el modelo:
+
+```bash
+python train_model.py
+```
+
+2. Realizar el test:
+
+```bash
+python test_request.py
+```
