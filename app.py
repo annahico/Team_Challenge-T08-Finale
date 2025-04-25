@@ -1,7 +1,7 @@
 import pickle
 
 import numpy as np
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, render_template, request
 from sklearn.datasets import load_iris
 from sklearn.ensemble import RandomForestClassifier
 
@@ -74,6 +74,11 @@ def retrain():  # Rutarlo al endpoint '/retrain', metodo GET
 #         "mensaje": "¡Este es el nuevo endpoint activado tras redesplegar! 🚀",
 #         "info": "Aquí podríamos agregar nuevas funcionalidades, estadísticas, etc."
 #     })
+
+
+@app.route("/web")
+def web_app():
+    return render_template("index.html")
 
 
 if __name__ == "__main__":
